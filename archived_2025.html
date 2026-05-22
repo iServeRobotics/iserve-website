@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2R7KV6LM0"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-P2R7KV6LM0');
+        </script>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>iServe Robotics</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* --- Section header --- */
+            .section-heading {
+                letter-spacing: 0.04em;
+                font-weight: 700;
+            }
+            .section-subheading {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 1.05rem;
+                line-height: 1.7;
+            }
+
+            /* --- Service cards --- */
+            .service-card {
+                background: #fff;
+                border: 1px solid rgba(0,0,0,0.06);
+                border-radius: 12px;
+                padding: 2.5rem 2rem 2rem;
+                height: 100%;
+                transition: box-shadow 0.3s ease, transform 0.3s ease;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            }
+            .service-card:hover {
+                box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+                transform: translateY(-3px);
+            }
+
+            /* --- Icon circles --- */
+            .icon-circle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background: rgba(244, 98, 58, 0.08);
+                margin-bottom: 1.25rem;
+            }
+            .icon-circle i {
+                font-size: 1.5rem;
+            }
+
+            /* --- Card title --- */
+            .service-card h3 {
+                font-size: 1.2rem;
+                font-weight: 700;
+                letter-spacing: 0.01em;
+                margin-bottom: 0.75rem;
+            }
+
+            /* --- Card description --- */
+            .service-card .card-desc {
+                font-size: 0.925rem;
+                line-height: 1.65;
+                color: #4a4a4a;
+                min-height: 4.5em;
+            }
+
+            /* --- Styled bullet list --- */
+            .feature-list {
+                list-style: none;
+                padding-left: 0;
+                margin: 0;
+                border-top: 1px solid rgba(0,0,0,0.06);
+                padding-top: 1.25rem;
+            }
+            .feature-list li {
+                position: relative;
+                padding-left: 1.25rem;
+                margin-bottom: 0.6rem;
+                font-size: 0.875rem;
+                color: #5a5a5a;
+                line-height: 1.55;
+            }
+            .feature-list li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0.5em;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #f4623a;
+                opacity: 0.6;
+            }
+            .feature-list li strong {
+                color: #2d2d2d;
+            }
+
+            /* --- Fade-in animation --- */
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(24px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-in {
+                opacity: 0;
+                animation: fadeInUp 0.6s ease forwards;
+            }
+            .animate-in:nth-child(1) { animation-delay: 0.05s; }
+            .animate-in:nth-child(2) { animation-delay: 0.15s; }
+            .animate-in:nth-child(3) { animation-delay: 0.25s; }
+            .animate-in:nth-child(4) { animation-delay: 0.35s; }
+
+            /* --- Footer polish --- */
+            footer {
+                border-top: 1px solid rgba(0,0,0,0.06);
+            }
+            footer a {
+                color: #f4623a;
+                text-decoration: none;
+            }
+            footer a:hover {
+                text-decoration: underline;
+            }
+
+            /* --- Services section background --- */
+            #services {
+                background: #fafafa;
+            }
+
+            /* Arial for all headings */
+            h1, h2, h3, h4, h5, h6,
+            header.masthead h1, header.masthead .h1,
+            .section-heading, .partners-heading {
+                font-family: Arial, sans-serif !important;
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html"><img src="assets/iServe Logo.png" alt="iServe Robotics" style="height: 18px;" /></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mailto:bona@iserve.ai">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">From Intent to Execution</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Bridge high-level autonomy with real-world deployment and operation.</p>
+                        <a class="btn btn-primary btn-xl" href="#services">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <div class="text-center mb-5">
+                    <h2 class="section-heading mt-0">The Problem</h2>
+                    <hr class="divider" />
+                    <p class="section-subheading text-muted">Autonomy stacks are fragmented, hard to integrate, and difficult to debug in production. Most autonomy works in demos. We make it work in the real world.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <!-- Autonomy Integration -->
+                    <div class="col-lg-6 d-flex animate-in">
+                        <div class="service-card">
+                            <div class="text-center">
+                                <div class="icon-circle"><i class="bi-diagram-3 text-primary"></i></div>
+                                <h3>Autonomy Integration</h3>
+                            </div>
+                            <p class="card-desc">We integrate perception, planning, and control into a working system — adapted to your robot and its operating environment.</p>
+                            <ul class="feature-list">
+                                <li><strong>Full-stack Integration</strong> — perception, planning, control</li>
+                                <li><strong>Hardware-adapted</strong> — tuned to your robot and sensors</li>
+                                <li><strong>Weeks, Not Months</strong> — deliver a working system fast</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Autonomy Operations -->
+                    <div class="col-lg-6 d-flex animate-in">
+                        <div class="service-card">
+                            <div class="text-center">
+                                <div class="icon-circle"><i class="bi-activity text-primary"></i></div>
+                                <h3>Autonomy Operations</h3>
+                            </div>
+                            <p class="card-desc">Production autonomy requires production operations. We provide logging, monitoring, root cause analysis, and continuous improvement from real-world data.</p>
+                            <ul class="feature-list">
+                                <li><strong>Logging & Monitoring</strong> — full observability across the stack</li>
+                                <li><strong>Root Cause Analysis</strong> — debug field failures systematically</li>
+                                <li><strong>Data-driven Iteration</strong> — improve from every deployment</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Ecosystem Enablement -->
+                    <div class="col-lg-6 d-flex animate-in">
+                        <div class="service-card">
+                            <div class="text-center">
+                                <div class="icon-circle"><i class="bi-people text-primary"></i></div>
+                                <h3>Ecosystem Enablement</h3>
+                            </div>
+                            <p class="card-desc">Lower the barrier for customers, vendors, and researchers to deploy autonomy. We enable faster adoption across robots, environments, and teams.</p>
+                            <ul class="feature-list">
+                                <li><strong>Reduced Complexity</strong> — deploy without deep autonomy expertise</li>
+                                <li><strong>Cross-environment</strong> — adapt to new sites and conditions</li>
+                                <li><strong>Open Interfaces</strong> — integrate with existing tools and workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Toward Cognitive Autonomy -->
+                    <div class="col-lg-6 d-flex animate-in">
+                        <div class="service-card">
+                            <div class="text-center">
+                                <div class="icon-circle"><i class="bi-cpu text-primary"></i></div>
+                                <h3>Toward Cognitive Autonomy</h3>
+                            </div>
+                            <p class="card-desc">Our long-term direction: robots that understand intent and execute end-to-end. From structured commands to unstructured goals, closing the loop between what you want and what the robot does.</p>
+                            <ul class="feature-list">
+                                <li><strong>Intent to Action</strong> — interpret high-level goals into execution</li>
+                                <li><strong>World Understanding</strong> — structured models from raw sensor data</li>
+                                <li><strong>Adaptive Execution</strong> — respond to the real world, not just the plan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <!-- <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Call to action-->
+<!--         <section class="page-section bg-dark text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">Join Our Early Access Program</h2>
+                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
+            </div>
+        </section> -->
+        <!-- Contact -->
+<!--         <section class="page-section" id="contact">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mt-0">Get In Touch</h2>
+                <hr class="divider" />
+                <p class="text-muted mb-4">We'd love to hear from you.</p>
+                <div class="fs-4">
+                    📧 <a href="mailto:info@iserve.ai">info@iserve.ai</a>
+                </div>
+            </div>
+        </section> -->
+        <!-- Partners -->
+        <section id="partners" style="background: #1a1d23; overflow: hidden; padding: 2.5rem 0 2rem;">
+            <style>
+                @keyframes marquee-scroll {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                .marquee-track {
+                    display: flex;
+                    width: max-content;
+                    animation: marquee-scroll 20s linear infinite;
+                }
+                .marquee-track:hover {
+                    animation-play-state: paused;
+                }
+                .marquee-item {
+                    flex: 0 0 auto;
+                    width: 200px;
+                    padding: 0 2.5rem;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0.5;
+                    transition: opacity 0.4s ease, transform 0.4s ease;
+                    cursor: default;
+                }
+                .marquee-item:hover {
+                    opacity: 1;
+                    transform: translateY(-4px);
+                }
+                .marquee-item a {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .marquee-item i {
+                    font-size: 1.8rem;
+                    color: rgba(255,255,255,0.85);
+                    display: block;
+                    margin-bottom: 0.5rem;
+                }
+                .marquee-item img {
+                    height: 2rem;
+                    max-width: 120px;
+                    margin-bottom: 0.5rem;
+                    filter: brightness(0) invert(1);
+                    opacity: 0.85;
+                    object-fit: contain;
+                }
+                .marquee-item span {
+                    font-family: "Merriweather Sans", sans-serif;
+                    font-size: 0.75rem;
+                    font-weight: 700;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    color: rgba(255,255,255,0.45);
+                    margin-top: 0.2rem;
+                }
+                .partners-heading {
+                    font-family: "Merriweather Sans", sans-serif;
+                    color: #fff;
+                }
+                .marquee-wrapper {
+                    position: relative;
+                }
+                .marquee-wrapper::before,
+                .marquee-wrapper::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    width: 100px;
+                    z-index: 2;
+                    pointer-events: none;
+                }
+                .marquee-wrapper::before {
+                    left: 0;
+                    background: linear-gradient(to right, #1a1d23, transparent);
+                }
+                .marquee-wrapper::after {
+                    right: 0;
+                    background: linear-gradient(to left, #1a1d23, transparent);
+                }
+                @media (max-width: 768px) {
+                    .marquee-track { animation-duration: 30s; }
+                    .marquee-item { width: 150px; padding: 0 1.25rem; }
+                    .marquee-item i { font-size: 2.2rem; }
+                }
+            </style>
+            <div class="container px-4 px-lg-5">
+                <h2 class="text-center mt-0 partners-heading" style="font-size: 1.4rem;">Partners & Collaborators</h2>
+                <hr class="divider" style="margin: 0.75rem auto;" />
+            </div>
+            <div class="marquee-wrapper mt-3">
+                <div class="marquee-track">
+                    <!-- Set 1 -->
+                    <div class="marquee-item"><a href="https://www.renesas.com/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/Renesas_Electronics_logo.svg" alt="Renesas" /></a></div>
+                    <div class="marquee-item"><a href="https://www.3nucr.com/research.html" target="_blank" style="text-decoration: none;"><img src="assets/partners/ucr.png" alt="3NUCR Lab" /><span>3NUCR Lab</span></a></div>
+                    <div class="marquee-item"><a href="https://yodolabs.jp/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/yodolabs.svg" alt="Yodolabs" /></a></div>
+                    <div class="marquee-item"><a href="https://github.com/VectorRobotics/vector-os-nano" target="_blank" style="text-decoration: none;"><img src="assets/partners/vector_transparent.png" alt="Vector Robotics" /></a></div>
+                    <!-- Set 2 (duplicate for seamless loop) -->
+                    <div class="marquee-item"><a href="https://www.renesas.com/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/Renesas_Electronics_logo.svg" alt="Renesas" /></a></div>
+                    <div class="marquee-item"><a href="https://www.3nucr.com/research.html" target="_blank" style="text-decoration: none;"><img src="assets/partners/ucr.png" alt="3NUCR Lab" /><span>3NUCR Lab</span></a></div>
+                    <div class="marquee-item"><a href="https://yodolabs.jp/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/yodolabs.svg" alt="Yodolabs" /></a></div>
+                    <div class="marquee-item"><a href="https://github.com/VectorRobotics/vector-os-nano" target="_blank" style="text-decoration: none;"><img src="assets/partners/vector_transparent.png" alt="Vector Robotics" /></a></div>
+                    <!-- Set 3 (extra duplicate for wide screens) -->
+                    <div class="marquee-item"><a href="https://www.renesas.com/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/Renesas_Electronics_logo.svg" alt="Renesas" /></a></div>
+                    <div class="marquee-item"><a href="https://www.3nucr.com/research.html" target="_blank" style="text-decoration: none;"><img src="assets/partners/ucr.png" alt="3NUCR Lab" /><span>3NUCR Lab</span></a></div>
+                    <div class="marquee-item"><a href="https://yodolabs.jp/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/yodolabs.svg" alt="Yodolabs" /></a></div>
+                    <div class="marquee-item"><a href="https://github.com/VectorRobotics/vector-os-nano" target="_blank" style="text-decoration: none;"><img src="assets/partners/vector_transparent.png" alt="Vector Robotics" /></a></div>
+                    <!-- Set 4 (extra for wide screens) -->
+                    <div class="marquee-item"><a href="https://www.renesas.com/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/Renesas_Electronics_logo.svg" alt="Renesas" /></a></div>
+                    <div class="marquee-item"><a href="https://www.3nucr.com/research.html" target="_blank" style="text-decoration: none;"><img src="assets/partners/ucr.png" alt="3NUCR Lab" /><span>3NUCR Lab</span></a></div>
+                    <div class="marquee-item"><a href="https://yodolabs.jp/en" target="_blank" style="text-decoration: none;"><img src="assets/partners/yodolabs.svg" alt="Yodolabs" /></a></div>
+                    <div class="marquee-item"><a href="https://github.com/VectorRobotics/vector-os-nano" target="_blank" style="text-decoration: none;"><img src="assets/partners/vector_transparent.png" alt="Vector Robotics" /></a></div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="bg-light py-4">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="small text-muted">
+                    Copyright &copy; 2024&ndash;2026 iServe Robotics &nbsp;|&nbsp;
+                    <a href="mailto:info@iserve.ai">info@iserve.ai</a>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+    </body>
+</html>
