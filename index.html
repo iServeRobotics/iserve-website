@@ -85,18 +85,30 @@
         overflow:hidden;
     }
 
-    .shot { position:relative; display:block; width:100%; height:100vh; }
-
-    /* Full-bleed: image fills the viewport */
-    .shot img {
-        width:100%; height:100%;
-        object-fit:cover;
-        object-position:center center;
-        display:block;
+    .shot {
+        position:relative; display:flex; align-items:center; justify-content:center;
+        width:100%; height:100vh; overflow:hidden;
     }
 
-    /* Blurred stand-in for the letterboxed area on tall/narrow screens — hidden until the mobile breakpoint needs it */
-    .shot img.shot-bg { display:none; }
+    /* Images are a fixed 3:2 (1536x1024) — viewports rarely match, so the real
+       image is shown uncropped and a blurred/darkened copy fills the rest of
+       the screen instead of cropping content off the sides or top/bottom. */
+    .shot img:not(.shot-bg) {
+        width:100%; height:100%;
+        object-fit:contain;
+        object-position:center center;
+        position:relative; z-index:1;
+        display:block;
+    }
+    .shot img.shot-bg {
+        display:block;
+        position:absolute; inset:0;
+        width:100%; height:100%;
+        object-fit:cover; object-position:center center;
+        filter:blur(34px) brightness(.5) saturate(1.15);
+        transform:scale(1.15);
+        z-index:0;
+    }
 
     /* Enter animation — scales inward so no gap ever shows at the edges */
     .shot {
@@ -170,22 +182,6 @@
         /* Native scroll-snap on touch — stepped feel, no hijacking */
         html { scroll-snap-type:y mandatory; }
         .panel, .footer { scroll-snap-align:center; scroll-snap-stop:always; }
-
-        /* Portrait can't "cover" a landscape slide without gutting it —
-           fit the real image to width, uncropped, and fill the rest of the
-           screen with a blurred/darkened copy instead of dead black space. */
-        .panel { height:100vh; padding:0; }
-        .shot  { height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; }
-        .shot img:not(.shot-bg) { width:100%; height:auto; max-height:100%; object-fit:contain; position:relative; z-index:1; }
-        .shot img.shot-bg {
-            display:block;
-            position:absolute; inset:0;
-            width:100%; height:100%;
-            object-fit:cover; object-position:center center;
-            filter:blur(34px) brightness(.5) saturate(1.15);
-            transform:scale(1.15);
-            z-index:0;
-        }
 
         .marker { bottom:1.5rem; left:1.25rem; font-size:.6rem; }
 
