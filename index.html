@@ -179,17 +179,9 @@
         .dots { display:none; }
         .hint { display:none; }
 
-        /* Native scroll-snap on touch — stepped feel, no hijacking */
-        html { scroll-snap-type:y mandatory; }
-        .panel, .footer { scroll-snap-align:center; scroll-snap-stop:always; }
-
         .marker { bottom:1.5rem; left:1.25rem; font-size:.6rem; }
 
-        /* Always visible on touch — no JS step gating */
-        .shot { opacity:1; transform:none; }
-        .marker { opacity:1; transform:none; }
-
-        .footer { min-height:auto; padding:4rem 1.5rem; scroll-snap-align:end; }
+        .footer { min-height:auto; padding:4rem 1.5rem; }
         .footer h2 { font-size:1.85rem; }
     }
     @media (max-width:640px) {
@@ -201,7 +193,6 @@
     @media (prefers-reduced-motion:reduce) {
         .shot, .marker { opacity:1 !important; transform:none !important; transition:none; }
         .rail { transition:none; }
-        html { scroll-snap-type:none; }
     }
 </style>
 </head>
@@ -331,30 +322,24 @@
     // ── Dots ───────────────────────────────────────────
     dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.go)));
 
-    // ── Touch (desktop-width touch devices only) ───────
-    let ty = 0;
-    window.addEventListener('touchstart', e => { ty = e.touches[0].clientY; }, { passive:true });
+    // ── Touch: one swipe = one step, same as desktop wheel ──
+    let ty = 0, tracking = false;
+    window.addEventListener('touchstart', e => {
+        ty = e.touches[0].clientY;
+        tracking = true;
+    }, { passive:true });
+    window.addEventListener('touchmove', e => {
+        if (tracking) e.preventDefault();
+    }, { passive:false });
     window.addEventListener('touchend', e => {
-        if (!desktop()) return;
+        tracking = false;
         const dy = ty - e.changedTouches[0].clientY;
         if (Math.abs(dy) > 60) go(index + (dy > 0 ? 1 : -1));
     }, { passive:true });
 
-    // ── Mobile: track active step from native scroll ───
-    const obs = new IntersectionObserver((entries) => {
-        if (desktop()) return;
-        entries.forEach(en => {
-            if (en.isIntersecting) {
-                index = steps.indexOf(en.target);
-                paint();
-            }
-        });
-    }, { threshold:0.5 });
-    steps.forEach(s => obs.observe(s));
-
-    // Re-sync if the viewport crosses the breakpoint
+    // Re-sync scroll position if the viewport is resized (e.g. rotation)
     window.addEventListener('resize', () => {
-        if (desktop()) steps[index].scrollIntoView({ behavior:'auto', block:'start' });
+        steps[index].scrollIntoView({ behavior:'auto', block:'start' });
     });
 
     paint();
