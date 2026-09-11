@@ -95,6 +95,9 @@
         display:block;
     }
 
+    /* Blurred stand-in for the letterboxed area on tall/narrow screens — hidden until the mobile breakpoint needs it */
+    .shot img.shot-bg { display:none; }
+
     /* Enter animation — scales inward so no gap ever shows at the edges */
     .shot {
         opacity:0;
@@ -169,11 +172,20 @@
         .panel, .footer { scroll-snap-align:center; scroll-snap-stop:always; }
 
         /* Portrait can't "cover" a landscape slide without gutting it —
-           fit to width and centre instead. */
+           fit the real image to width, uncropped, and fill the rest of the
+           screen with a blurred/darkened copy instead of dead black space. */
         .panel { height:100vh; padding:0; }
-        .shot  { height:100vh; display:flex; align-items:center; }
-        .shot img { width:100%; height:auto; max-height:100%; object-fit:contain; }
-        .shot::after { display:none; }
+        .shot  { height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; }
+        .shot img:not(.shot-bg) { width:100%; height:auto; max-height:100%; object-fit:contain; position:relative; z-index:1; }
+        .shot img.shot-bg {
+            display:block;
+            position:absolute; inset:0;
+            width:100%; height:100%;
+            object-fit:cover; object-position:center center;
+            filter:blur(34px) brightness(.5) saturate(1.15);
+            transform:scale(1.15);
+            z-index:0;
+        }
 
         .marker { bottom:1.5rem; left:1.25rem; font-size:.6rem; }
 
@@ -216,6 +228,7 @@
 <!-- STEP 0 — HERO -->
 <section class="panel step active" id="hero">
     <div class="shot">
+        <img class="shot-bg" src="assets/hero_iserve.png" alt="" aria-hidden="true" />
         <img id="heroImg"
              src="assets/hero_iserve.png"
              alt="iServe Robotics — From Intent to Deployment. The execution layer for real-world robotics: deploy faster, operate more reliably, scale with confidence."
@@ -228,6 +241,7 @@
 <section class="panel step" id="case1">
     <div class="shot">
         <span class="marker">Case 01 — Outdoor Service Robotics</span>
+        <img class="shot-bg" src="assets/cleaning_case_iserve.png" alt="" aria-hidden="true" />
         <img src="assets/cleaning_case_iserve.png"
              alt="Case 01: Less on-site, more progress. Reduce field engineering, enhance fleet management, and deliver happier customers."
              loading="lazy" />
@@ -238,6 +252,7 @@
 <section class="panel step" id="case2">
     <div class="shot">
         <span class="marker">Case 02 — Autonomy in Complex Environments</span>
+        <img class="shot-bg" src="assets/patrol_case_iserve.png" alt="" aria-hidden="true" />
         <img src="assets/patrol_case_iserve.png"
              alt="Case 02: Advanced edge intelligence. Real-time perception and decision making at the edge, robust behavior, and quick deployment from pilot to production."
              loading="lazy" />
