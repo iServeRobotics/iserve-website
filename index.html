@@ -172,6 +172,31 @@
     .footer .meta a { color:var(--orange); text-decoration:none; }
     .footer .note { font-size:.62rem; color:rgba(255,255,255,.15); margin-top:.6rem; font-style:italic; }
 
+    /* ── Partners marquee ─────────────────────────────── */
+    .partners { margin-top:3.25rem; width:100%; max-width:760px; }
+    .partners-label {
+        font-size:.66rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+        color:rgba(255,255,255,.28); margin-bottom:1.4rem;
+    }
+    .marquee-wrap { position:relative; overflow:hidden; }
+    .marquee-wrap::before, .marquee-wrap::after {
+        content:''; position:absolute; top:0; bottom:0; width:70px; z-index:2; pointer-events:none;
+    }
+    .marquee-wrap::before { left:0;  background:linear-gradient(to right, var(--dark2), transparent); }
+    .marquee-wrap::after  { right:0; background:linear-gradient(to left,  var(--dark2), transparent); }
+    .marquee-track { display:flex; width:max-content; animation:marquee 26s linear infinite reverse; }
+    .marquee-track:hover { animation-play-state:paused; }
+    @keyframes marquee { 0% { transform:translateX(-50%); } 100% { transform:translateX(0); } }
+    .marquee-item {
+        flex:0 0 auto; display:flex; align-items:center; gap:.55rem;
+        padding:0 1.6rem; opacity:.45; transition:opacity .3s, transform .3s;
+    }
+    .marquee-item:hover { opacity:.9; transform:translateY(-2px); }
+    .marquee-item img { height:1.5rem; max-width:105px; filter:brightness(0) invert(1); object-fit:contain; }
+    .marquee-item span {
+        font-size:.72rem; font-weight:700; letter-spacing:.05em; color:rgba(255,255,255,.55); white-space:nowrap;
+    }
+
     /* ── Responsive ────────────────────────────────────── */
     @media (max-width:900px) {
         :root { --nav-h:56px; }
@@ -183,6 +208,8 @@
 
         .footer { min-height:auto; padding:4rem 1.5rem; }
         .footer h2 { font-size:1.85rem; }
+        .partners { margin-top:2.5rem; }
+        .marquee-item { padding:0 1.15rem; }
     }
     @media (max-width:640px) {
         .nav { padding:0 1.25rem; }
@@ -193,6 +220,7 @@
     @media (prefers-reduced-motion:reduce) {
         .shot, .marker { opacity:1 !important; transform:none !important; transition:none; }
         .rail { transition:none; }
+        .marquee-track { animation:none; }
     }
 </style>
 </head>
@@ -251,6 +279,25 @@
     <h2>Make your next 100 robots easier than your first 10.</h2>
     <p class="lead">Bring us your hardest deployment problems.<br>We'll help turn them into a repeatable path to scale.</p>
     <a href="mailto:info@iserve.ai" class="footer-cta">Talk to iServe</a>
+
+    <div class="partners">
+        <p class="partners-label">Partners &amp; Customers</p>
+        <div class="marquee-wrap">
+            <div class="marquee-track">
+                <div class="marquee-item"><a href="https://www.renesas.com/en" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/Renesas_Electronics_logo.svg" alt="Renesas" /></a></div>
+                <div class="marquee-item"><a href="https://www.3nucr.com/research.html" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/ucr.png" alt="3NUCR Lab" /><span>3NUCR Lab</span></a></div>
+                <div class="marquee-item"><a href="https://yodolabs.jp/en" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/yodolabs.svg" alt="Yodolabs" /></a></div>
+                <div class="marquee-item"><a href="https://viabot.com/" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/viabot.png" alt="Viabot" /><span>Viabot</span></a></div>
+                <div class="marquee-item"><a href="https://omakaserobotics.ai/" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/omakase.png" alt="Omakase Robotics" /><span>Omakase Robotics</span></a></div>
+                <div class="marquee-item"><a href="https://www.renesas.com/en" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/Renesas_Electronics_logo.svg" alt="Renesas" /></a></div>
+                <div class="marquee-item"><a href="https://www.3nucr.com/research.html" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/ucr.png" alt="3NUCR Lab" /><span>3NUCR Lab</span></a></div>
+                <div class="marquee-item"><a href="https://yodolabs.jp/en" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/yodolabs.svg" alt="Yodolabs" /></a></div>
+                <div class="marquee-item"><a href="https://viabot.com/" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/viabot.png" alt="Viabot" /><span>Viabot</span></a></div>
+                <div class="marquee-item"><a href="https://omakaserobotics.ai/" target="_blank" rel="noopener" style="display:contents;"><img src="assets/partners/omakase.png" alt="Omakase Robotics" /><span>Omakase Robotics</span></a></div>
+            </div>
+        </div>
+    </div>
+
     <div class="meta">
         <p>Copyright &copy; 2024&ndash;2026 iServe Robotics &nbsp;|&nbsp; <a href="mailto:info@iserve.ai">info@iserve.ai</a></p>
         <p class="note">Interfaces and metrics shown are representative and illustrative.</p>
