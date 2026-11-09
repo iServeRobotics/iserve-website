@@ -6,11 +6,12 @@ import { Mark } from "@/components/mark";
 import { discussMailto } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+// Absolute so the nav still works from subpages such as /experiments.
 const links = [
-  { href: "#patrol", id: "patrol", label: "Patrol" },
-  { href: "#cleaning", id: "cleaning", label: "Cleaning" },
-  { href: "#approach", id: "approach", label: "Approach" },
-  { href: "#contact", id: "contact", label: "Contact" },
+  { href: "/#patrol", id: "patrol", label: "Patrol" },
+  { href: "/#cleaning", id: "cleaning", label: "Cleaning" },
+  { href: "/#approach", id: "approach", label: "Approach" },
+  { href: "/#contact", id: "contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
@@ -97,7 +98,7 @@ export function SiteHeader() {
 
   return (
     <header className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`}>
-      <a className="wordmark" href="#top">
+      <a className="wordmark" href="/#top">
         <Mark className="wordmark-mark" />
         <span>iServe</span>
       </a>
